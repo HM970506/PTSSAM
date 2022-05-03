@@ -1,0 +1,38 @@
+.index_body{
+    background-color: white;
+}
+
+.index_up{
+    padding-top: 400px;
+    
+}
+.index_up_subtext{
+    font-size: 30px;
+    position: relative;
+}
+
+.index_up_logo{
+    width: 700px;
+    height: 400px;
+}
+
+.index_down{
+    padding-top: 150px;
+}
+.index_start_button{
+    width: 600px;
+    height: 70px;
+    font-size: 30px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: #ff4b12;
+
+    box-shadow: 0px 5px 20px grey;
+
+}
+
+.index_down_subtext{
+    color: grey;
+    font-size: 20px;
+}
