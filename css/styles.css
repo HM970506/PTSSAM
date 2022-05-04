@@ -1,15 +1,23 @@
 @import "index_css.css";
+@import "area_css.css";
+@import "game_css.css";
 body{
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    height: 100%;
 }
 div{
-    display: block;
-    border: 1px solid black;
-    text-align: center;
-    padding:10px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    border:1px solid black;
 }
 
+.out{
+    background-color: #faeee7;
+    width: 900px;
+    height: 1600px;
+    padding:0px 0px 0px 0px;
+    margin:0px 0px 0px 0px;
+
+}

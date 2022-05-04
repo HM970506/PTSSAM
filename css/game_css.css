@@ -1,0 +1,137 @@
+.game_stage{
+    width: 80%;
+}
+
+.game_upbar{
+    display: flex;
+    justify-content: space-around; 
+    width: 100%;
+    align-items: center;
+    
+}
+
+.game_main{
+    height: 70%;
+    display: inline-block;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+.game_stage{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.game_question{
+    font-size:50px;
+    font-weight: bold;
+}
+
+.back_button{
+    width: 15%;
+    font-size: 20px;
+    color: grey;
+}
+
+.game_option_text{
+    font-size:50px; 
+    font-weight: bold;
+}
+
+.pass{
+    font-size: 25px;
+    color:gray;
+    margin-top: 100px;
+}
+
+.game1_option{
+    height: 50%;
+}
+
+.game2_option{
+    display: flex;
+    align-items: center; 
+    margin-top:30px;
+    margin-right: 10px;
+}
+.game3_option{
+    display: flex;
+    align-items: center; 
+    margin-top:30px;
+    margin-right: 10px;
+}
+
+.game5_option{
+    
+}
+
+#stage1_option1{
+    background-image: url('./images/밸런스게임/시간대(오전오후)/오전.png');
+}
+#stage1_option2{
+    background-image: url('./images/밸런스게임/시간대(오전오후)/오후.png');
+}
+
+.game1_option_image{
+    width: 750px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 3px solid black;
+}
+
+#stage2_option1{
+    background-image: url('./images/밸런스게임/숙련도/초급자.png');
+}
+#stage2_option2{
+    background-image: url('./images/밸런스게임/숙련도/중급자.png');
+}
+#stage2_option3{
+    background-image: url('./images/밸런스게임/숙련도/숙련자.png');
+}
+
+
+.game2_option_image{
+    width: 500px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 3px solid black;
+    margin-right: 50px;
+}
+
+
+#stage3_option1{
+    background-image: url('./images/밸런스게임/운동목적/다이어트.png');
+}
+#stage3_option2{
+    background-image: url('./images/밸런스게임/운동목적/건강관리.png');
+}
+#stage3_option3{
+    background-image: url('./images/밸런스게임/운동목적/근력강화.png');
+}
+
+
+.game3_option_image{
+    width: 500px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 3px solid black;
+    margin-right: 50px;
+}
+
+#stage4_option1{
+    background-image: url('./images/밸런스게임/강사 성별/남성.png');
+
+}
+
+#stage4_option2{
+    background-image: url('./images/밸런스게임/강사 성별/여성.png');
+
+}

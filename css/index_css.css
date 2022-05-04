@@ -1,9 +1,11 @@
-.index_body{
+
+#index_out{
     background-color: white;
 }
 
 .index_up{
     padding-top: 400px;
+    display: inline-block;
     
 }
 .index_up_subtext{
@@ -14,9 +16,14 @@
 .index_up_logo{
     width: 700px;
     height: 400px;
+    background-image: url("./images/logo/logo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .index_down{
+    display: inline-block;
     padding-top: 150px;
 }
 .index_start_button{
@@ -35,4 +42,5 @@
 .index_down_subtext{
     color: grey;
     font-size: 20px;
+    margin-top:30px;
 }
