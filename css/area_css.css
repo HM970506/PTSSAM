@@ -6,21 +6,6 @@
     margin: 10px;
 }
 
-input{
-    width: 90%;
-    height: 70px;
-    font-size: 30px;
-    border:none;
-    border-bottom: 2px solid grey;
-}
-
-input::placeholder{
-    color:gray;
-}
-
-input:focus{
-    outline: none;
-}
 
 .searching_box{
     height: 1400px;

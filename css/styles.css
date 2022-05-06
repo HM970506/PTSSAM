@@ -1,6 +1,9 @@
 @import "index_css.css";
 @import "area_css.css";
 @import "game_css.css";
+@import "name_set_css.css";
+@import "keyword_setting_css.css";
+
 body{
     text-align: center;
     display: flex;
@@ -17,7 +20,40 @@ div{
     background-color: #faeee7;
     width: 900px;
     height: 1600px;
-    padding:0px 0px 0px 0px;
-    margin:0px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
 
+}
+
+
+.main{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+input{
+    width: 90%;
+    height: 70px;
+    font-size: 30px;
+    border:none;
+    border-bottom: 2px solid grey;
+}
+
+input::placeholder{
+    color:gray;
+}
+
+input:focus{
+    outline: none;
+}
+
+.down_button{
+    color: gray;
+    font-size: 20px;
 }

@@ -1,0 +1,21 @@
+#out_nameset{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.nameset_up{
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 100px;
+}
+
+.nameset_middle{
+    margin-bottom: 200px;
+    width: 100%;
+}
+
+
+.nameset_middle_input{
+    background-color: transparent;
+}
