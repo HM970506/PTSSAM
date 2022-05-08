@@ -3,6 +3,8 @@
 @import "game_css.css";
 @import "name_set_css.css";
 @import "keyword_setting_css.css";
+@import "output_css.css";
+@import "trainer_css.css";
 
 body{
     text-align: center;

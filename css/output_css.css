@@ -1,0 +1,167 @@
+#output_main{
+    height: 100%;
+    background-color: white;
+}
+
+.output_up{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding: 0px;
+}
+
+.output_up_setting{
+    color:gray;
+    margin-right: 20px;
+}
+
+.output_title{
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+}
+
+.output_up_name{
+    color: blue;
+}
+
+.output_subboxs{
+    background-color: #faeee7;
+    width: 90%;
+    height: 80%;
+    text-align: center;
+}
+
+.output_subboxs_setting{
+    width: 100%;
+    height: 3%;
+    padding:0px;
+    
+    display: flex;
+    justify-content: right;
+}
+
+.output_subboxs_setting_text{
+    color: grey;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+
+
+.output_subbox{
+    width: 90%;
+    height: 250px;
+    background-color: #ffba9f;
+    border-radius: 20px;
+    border:none;
+    display: inline-block;
+    text-align: center;
+
+}
+
+.output_subbox_in{
+    width: 90%;
+    height: 70%;
+    display: inline-block;
+}
+
+.output_subbox_up{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content:space-between;
+    margin: 0px;
+    padding: 0px;
+}
+
+.output_subbox_main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+
+.output_subbox_main_image{
+    width: 30%;
+    background-image: url("./images/PT강사/김빛남.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+.output_subbox_main_text{
+    display: inline-block;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+#output_subbox_main_text{
+    width: 70%;
+}
+
+.nameandstar{
+    display: flex;
+    justify-content: space-between;
+}
+.nameandstar_name{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nameandstar_star_score{
+    font-weight: bold;
+}
+
+.nameandstar_star_count{
+    color: grey;
+}
+
+.subtext{
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.tags{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tag{
+    width: 100px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff5c00;
+    border-radius: 40px;
+    color:white;
+    margin: 5px;
+    border: none;
+}
+
+.output_down{
+    width: 90%;
+    height: 10%;
+    background-color: #faeee7;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: gray;
+    font-size: 30px;
+}
+
+.output_down_logo{
+    width: 80px;
+    height: 60px;
+    background-image: url("./images/logo/logo2_64bit.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
