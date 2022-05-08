@@ -6,6 +6,7 @@
 @import "output_css.css";
 @import "trainer_css.css";
 
+
 body{
     text-align: center;
     display: flex;
@@ -15,7 +16,7 @@ body{
 div{
     padding-top:10px;
     padding-bottom: 10px;
-    border:1px solid black;
+   border:1px solid black;
 }
 
 .out{

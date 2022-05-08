@@ -1,0 +1,176 @@
+#out_trainer{
+    background-color: white;
+    display: block;
+}
+
+#main_trainer_out{
+    background-color: #faeee7;
+    height: 93%;
+    width: 90%;
+    margin: 5%;
+}
+
+#main_trainer_in{
+    background-color: #ffba9f;
+    border-radius: 10px;
+    border: none;
+    height: 90%;
+    width: 85%;
+    display:block;
+    margin-top: 30px;
+    padding:10px 20px 10px 20px;
+ 
+}
+.tainer_backbutton{
+    margin-top: 10px;
+    width: 130px;
+    height: 80px;
+}
+
+.trainer_in{
+    width: 100%;
+    height: 75%;
+}
+
+
+.trainer_up{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+}
+
+.trainer_profile{
+    width: 100%;
+    height: 10%;
+    display: flex;
+}
+
+.trainer_profile_image{
+    width: 30%;
+    background-image: url("./images/PT강사/김빛남.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+.trainer_profile_text{
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+}
+
+.trainer_profile_text_tag{
+    background-color: rgb(170, 170, 170);
+    color:black;
+    width: 60px;
+    height: 2px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.profile_text_up{
+    display: flex;
+    justify-content: space-between;
+}
+
+.up_button{
+    background-color: #ff5c00;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border:none;
+    padding:5px;
+    box-shadow: 0px 5px 5px grey;
+    width: 90px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trainer_in_menus{
+    display: flex;
+    justify-content: left;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.trainer_in_menu{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border:none;
+    font-size: 25px;
+    font-weight: bold;
+    width: 30%;
+}
+
+#menu_intro{
+    background-color: #ff6b16;
+}
+
+#menu_review{
+    background-color: #ff7e33;
+    color: rgb(58, 58, 58)
+}
+
+#menu_tel{
+    background-color: #ffbd67;
+    color: rgb(58, 58, 58)
+}
+
+.trainer_in_detail{
+ background-color: #ff6b16;
+ padding: 0px;
+ padding-left: 10px;
+ margin: 0px;
+ text-align: left;
+ border-top-right-radius: 10px;
+ border-bottom-left-radius: 10px;
+ border-bottom-right-radius: 10px;
+ border:none;
+ height: 100%;
+}
+
+.trainer_title{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.trainer_belong{
+    display: flex;
+    align-items: center;
+}
+
+#trainer_belong_subtext{
+    margin-left: 10px;
+}
+
+.trainer_movie{
+    height: 40%;
+}
+
+.trainer_movie_movie{
+    height: 70%;
+    width: 95%;
+    border: 3px black solid;
+    background-image: url("./images/강사 설명/소개 영상.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.trainer_others{
+    display: flex;
+    justify-content: space-between;
+}
+
+.trainer_others_qualification {
+    width: 60%;
+}
+
+.trainer_others_career{
+    width: 40%;
+}
+
