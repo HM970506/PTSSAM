@@ -11,14 +11,24 @@
     <div id="index_out" class="out">
       <div class="main">
       <div class="index_up">
-        <div class="index_up_logo"></div>
+        <div class="index_up_totallogo">
+          <div class="index_up_logo_box" id="logo1_box">
+            <img src="./css/images/logo/logo2_32bit.png" class="logo1">
+          </div>
+          <div class="index_up_logo_box">
+            <img src="./css/images/logo/logo_32bit_down.png" class="logo2">
+          </div>
+        </div>
         <div class="index_up_subtext">
-          내 지역을 설정하고<br />
-          추천 PT 트레이너를 확인해보세요.
+          <p> 내 지역을 설정하고<br />
+            추천 PT 트레이너를 확인해보세요.</p>
+
         </div>
       </div>
       <div class="index_down">
-        <button class="index_start_button" type="button">시작하기</button>
+        <div class="index_down_button">
+          <button class="index_start_button" id="start_button" type="button">시작하기</button></div>
+
         <div class="index_down_subtext">이미 계정이 있으신가요?</div>
       </div>
     </div>
@@ -27,5 +37,6 @@
       src="https://kit.fontawesome.com/6478f529f2.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/index_js.js"></script>
   </body>
 </html>

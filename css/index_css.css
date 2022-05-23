@@ -1,46 +1,108 @@
 
 #index_out{
-    background-color: white;
+    background-color: var(--color0);
 }
 
 .index_up{
-    padding-top: 400px;
-    display: inline-block;
-    
+    padding-top: 30%;
 }
+
 .index_up_subtext{
     font-size: 30px;
     position: relative;
+    opacity: 0%;
+    animation: trans-down 0.5s 2.8s linear;
+    animation-fill-mode: forwards;
 }
 
-.index_up_logo{
+
+
+.index_up_logo_box{
     width: 700px;
-    height: 400px;
-    background-image: url("./images/logo/logo.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 200px;
 }
 
 .index_down{
-    display: inline-block;
-    padding-top: 150px;
+    display: block;
+    padding-bottom: 30%;
+    opacity:0%;
+    animation: trans-down 0.5s 2.8s linear;
+    animation-fill-mode: forwards;
 }
+
+.index_down_button{
+    display: flex;
+    justify-content: center;
+}
+
 .index_start_button{
     width: 600px;
     height: 70px;
     font-size: 30px;
     border-radius: 10px;
     border: none;
-    color: white;
-    background-color: #ff4b12;
+    display: block;
+    cursor: pointer;
+    color: var(--color0);
+    background-color: var(--color2);
+    box-shadow: 0px 5px 20px var(--color3);
+    will-change: transform;
+    transition: 0.25s;
+}
 
-    box-shadow: 0px 5px 20px grey;
+.index_start_button:hover{
+    background-color: var(--color0);
+    color:var(--color4);
+    transform: scale(1.05);
+}
+
+
+.index_down_subtext{
+    color: var(--color3);
+    font-size: 20px;
+    margin-top:20px;
+    z-index: 0;
 
 }
 
-.index_down_subtext{
-    color: grey;
-    font-size: 20px;
-    margin-top:30px;
+
+.index_up_totallogo{
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color0);
+    z-index: 1;
+
+    animation: trans-up 1.5s 2.3s cubic-bezier(0.5, 0, 0.1, 1);
+    animation-fill-mode: forwards;
+    transform: translateY(20%);
+}
+
+#logo1_box{
+    z-index: 2;
+    animation: trans-up 0.5s 1.7s ease-out;
+    transform: translateY(80%);
+    animation-fill-mode: forwards;
+    background-color: var(--color0);
+   
+}
+
+.logo1{
+    height: 200px;
+    width: 220px;
+    padding-bottom: 0px;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+    animation-name:text-clip, rotate;
+    animation-delay: 0s, 0.8s;
+    animation-duration: 1s, 1s;
+}
+
+.page{
+    z-index: 10;
+    height: 9px;
+    width: 16px;
+    background-color: var(--color0);
+    border-radius: 100%;
+    animation: new-page 0.3s 0.3s ease-out;
+    animation-fill-mode: forwards;
 }

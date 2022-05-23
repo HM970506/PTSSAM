@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PTSSAM</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHZR3vYLQs69URyNPotBeWeeyrSafT4yk&libraries=places&callback=initAutocomplete&region=kr" async defer></script>
   </head>
   <body>
-    <div class="out">
+    <div class="out" id="area_out">
       <div class="main">
       <div class="searching_bar">
         <div class="searcing_bar_logo">
@@ -16,23 +18,28 @@
         </div>
         <input
           type="text"
+          id="search"
           placeholder="내 지역 검색(동, 읍, 면)"
           class="searching"
         />
       </div>
       <div class="searching_output"></div>
       <div class="searching_list"></div>
-      <button class="next_button">다음</button>
       <div class="searching_box">
         <div class="searching_box_firsttext">
-          내 지역을 검색하여 <br />PT를 진행할 지역을 설정해주세요.
+          <p>내 지역을 검색하여 <br />PT를 진행할 지역을 설정해주세요.</p>
         </div>
+      </div>
+      <div class="searching_down">
+        <button class="next_button">다음</button>
       </div>
     </div>
   </div>
+
     <script
       src="https://kit.fontawesome.com/6478f529f2.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/area_js.js"></script>
   </body>
 </html>

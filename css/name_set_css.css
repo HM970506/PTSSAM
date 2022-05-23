@@ -5,17 +5,29 @@
 }
 
 .nameset_up{
+    opacity: 0%;
     font-size: 50px;
     font-weight: bold;
     margin-top: 100px;
+    animation: trans-down 0.5s linear;
+    animation-fill-mode: forwards;
 }
 
 .nameset_middle{
+    opacity: 0%;
     margin-bottom: 200px;
     width: 100%;
+    animation: trans-down 0.5s 0.1s linear;
+    animation-fill-mode: forwards;
 }
 
 
 .nameset_middle_input{
     background-color: transparent;
+}
+
+.nameset_down{
+    opacity: 0%;
+    animation: trans-down 0.5s 0.2s linear;
+    animation-fill-mode: forwards;
 }
