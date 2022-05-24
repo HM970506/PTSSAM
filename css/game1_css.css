@@ -1,5 +1,10 @@
 #game1{
     margin-top: 30%;
+    position: absolute;
+    left: 0;
+    top:0;
+    bottom:0;
+    right:0;
 }
 
 .game1_ani{
@@ -37,7 +42,7 @@
     color:var(--color3);
 }
 
-.text_select{
+.game1_text_select{
     color: var(--color2);
 }
 
@@ -53,17 +58,8 @@
     border:none;
     padding:0;
     margin:0;
-
+     background-color: rgb(255, 255, 105);
 }
-
-.sun{
-    background-color: rgb(255, 255, 105);
-}
-
-#moon{
-    background-color: rgb(220, 220, 220);
-}
-
 
 .to-night-background{
     animation: to-night-background 1s ease-in-out;
@@ -85,38 +81,4 @@
     transform-origin: 100px 400px;
     animation: to-day 1s ease-in-out;
     animation-fill-mode: forwards;
-}
-
-@keyframes to-night{
-	0%{
-        transform: rotate(0deg);
-        }
-    50%{
-        background-color: rgb(255, 255, 105);;
-    }
-    51%{
-        background-color:  rgb(220, 220, 220);
-    }
-    100%{
-        background-color:  rgb(220, 220, 220);
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes to-night-background{
-    from{
-
-    }
-    to{
-        background-color: rgb(47, 43, 66);
-    }
-}
-
-@keyframes to-day-background{
-    from{
-
-    }
-    to{
-        background-color: rgb(102, 173, 255);
-    }
 }

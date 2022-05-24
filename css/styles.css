@@ -4,6 +4,10 @@
 @import "area_css.css";
 @import "game_css.css";
 @import "game1_css.css";
+@import "game2_css.css";
+@import "game3_css.css";
+@import "game4_css.css";
+@import "game5_css.css";
 @import "name_set_css.css";
 @import "keyword_setting_css.css";
 @import "output_favorite_css.css";
@@ -71,4 +75,24 @@ input:focus{
     border-radius: 100%;
     color: var(--color0);
     background-color: var(--color0);
+}
+
+.next_button_box{
+    position: inherit;
+}
+
+.next_button{
+    background-color: gray;
+    width: 180px;
+    height: 70px;
+    font-size: 30px;
+    color: white;
+    border-radius: 40px;
+    border: none;
+    box-shadow: 0px 5px 10px grey;
+    z-index: 100;
+}
+
+.next_button:hover{
+    cursor: pointer;
 }

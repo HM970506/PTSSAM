@@ -1,0 +1,51 @@
+#game3{
+    margin-top: 30%;
+    margin-bottom: 30%;
+    position: absolute;
+    left: 0;
+    top:0;
+    bottom:0;
+    right:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game3_option{
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:none;
+    font-size:50px;
+    color: rgb(203, 203, 203);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 80%;
+    height: 20%;
+    transition:  all ease-out 0.1s;
+    box-shadow: inset 0 0 0 300px rgba(0,0,0,0.7), 0 0 20px 5px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+
+#option1{
+    background-image: url('./images/밸런스게임/운동목적/다이어트.png');
+}
+#option2{
+    background-image: url('./images/밸런스게임/운동목적/건강관리.png');
+}
+#option3{
+    background-image: url('./images/밸런스게임/운동목적/근력강화.png');
+}
+
+.select_option{
+    box-shadow:  0 0 20px 5px rgba(0,0,0,0.3);
+    text-shadow: 0 0 10px black,0 0 10px black;
+    font-weight:bold;
+    font-size: 70px;
+    height: 40%;
+    color:var(--color0);
+}

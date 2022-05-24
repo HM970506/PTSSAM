@@ -17,6 +17,10 @@
     opacity: 0%;
     margin-bottom: 200px;
     width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
     animation: trans-down 0.5s 0.1s linear;
     animation-fill-mode: forwards;
 }
@@ -24,10 +28,35 @@
 
 .nameset_middle_input{
     background-color: transparent;
+    border: none;
+    font-size: 30px;
+    width: 80%;
 }
 
 .nameset_down{
     opacity: 0%;
     animation: trans-down 0.5s 0.2s linear;
     animation-fill-mode: forwards;
+}
+
+.nameset_button{
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color2);
+    color:var(--color0);
+    font-size:20px;
+    width: 10%;
+    height: 60%;
+}
+
+.nameset_button:hover{
+    cursor: pointer;
+}
+
+#output_main{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 10%;
 }

@@ -11,34 +11,59 @@
     <div class="out">
       <div class="main" id="main_game">
         <div class="game_upbar">
-          <div class="back_button"></div>
+          <div class="game_upbar_side"></div>
           <div class="game_stage">1/5</div>
-          <div class="back_button" id="stage1_backbutton">뒤로가기</div>
+          <div class="game_upbar_side back_button" id="back_stage1">뒤로가기</div>
         </div>
         <div class="game_question">선호하는 운동 시간대는?</div>
 
         <div class="game_main">
 
-            <div id="game1">
-
+            <div id="game1" class="left-visible">
                 <div class="game1_ani">
                     <div class="game1_ani_background">
-                        <div class="game1_ani_object sun"></div>
+                        <div class="game1_ani_object"></div>
                     </div>
                 </div>
                 <div class="game1_texts">
-                    <div class="game1_text text_select" id="game1_text1">오전</div>
+                    <div class="game1_text game1_text_select" id="game1_text1">오전</div>
                     <div class="game1_text" id="game1_text2">오후</div>
                 </div>
-
-
             </div>
 
+            <div id="game2" class="yetvisible">
+              <div class="game2_ani">
+                <div class="game2_texts">
+                  <div id="game2_text_before">👈</div>
+                  <div class="game2_text" id="level_0">초심자</div>
+                  <div id="game2_text_after">👉</div>
+                </div>
+                <div class="game2_ani_background">
+                  <div class="game2_ani_object object_background">
+                    <div class="game2_ani_object object_body" id="body_0"></div>
+                    <div class="game2_ani_object object_leg1" id="leg1_0"></div>
+                    <div class="game2_ani_object object_leg2" id="leg2_0"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="game3" class="yetvisible">
+              <div class="game3_option select_option" id="option1">다이어트</div>
+              <div class="game3_option" id="option2">건강관리</div>
+              <div class="game3_option" id="option3">근력강화</div>
+            </div>
+
+            <div id="game4" class="yetvisible">
+            </div>
+
+            <div id="game5" class="yetvisible">
+            </div>
 
         </div>
 
         <div class="next_button_box">
-            <button class="next_button">다음</button>
+            <button class="next_button" id="next_stage1">다음</button>
         </div>
       </div>
     </div>

@@ -69,3 +69,138 @@
   }
 }
 
+
+@keyframes to-night{
+	0%{
+        background-color: rgb(255, 255, 105);
+        transform: rotate(0deg);
+        }
+    50%{
+        background-color: rgb(255, 255, 105);
+    }
+    51%{
+        background-color:  rgb(220, 220, 220);
+    }
+    100%{
+        background-color:  rgb(220, 220, 220);
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes to-day{
+	0%{
+        background-color:  rgb(220, 220, 220);
+        transform: rotate(0deg);
+        }
+    50%{
+        background-color:  rgb(220, 220, 220);
+    }
+    51%{
+        background-color: rgb(255, 255, 105);;
+    }
+    100%{
+        background-color: rgb(255, 255, 105);;
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes to-night-background{
+    from{
+        background-color: rgb(102, 173, 255);
+    }
+    to{
+        background-color: rgb(47, 43, 66);
+    }
+}
+
+@keyframes to-day-background{
+    from{
+        background-color: rgb(47, 43, 66);
+    }
+    to{
+        background-color: rgb(102, 173, 255);
+    }
+}
+
+@keyframes left-invisible{
+  from{
+    opacity: 100%;
+  }
+  to{
+    opacity: 0%;
+    transform: translateX(-900px);
+  }
+}
+
+@keyframes right-invisible{
+  from{
+    opacity: 100%;
+  }
+  to{
+    opacity: 0%;
+    transform: translateX(900px);
+  }
+}
+
+
+@keyframes left-visible{
+  from{
+    transform: translateX(900px);
+    opacity: 0%;
+
+  }
+  to{
+    opacity: 100%;
+  }
+}
+
+@keyframes right-visible{
+  from{
+    transform: translateX(-900px);
+    opacity: 0%;
+
+  }
+  to{
+    opacity: 100%;
+  }
+}
+
+
+
+
+@keyframes leg1 {
+  0%,
+  100% {
+   transform: rotate(10deg);
+  }
+  45% {
+   transform: rotate(-15deg);
+  }
+  
+}
+
+@keyframes leg2 {
+  0%,
+  100% {
+      transform: rotate(-15deg);     
+  }
+  45% {
+      transform: rotate(10deg);
+  }
+  
+}
+
+@keyframes body{
+  0%, 100%
+  {
+    transform: translate(-5px, -5px);
+  }
+  25%, 75% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+      transform: translate(5px, -5px);
+  }
+}

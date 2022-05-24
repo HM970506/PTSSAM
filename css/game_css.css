@@ -12,6 +12,7 @@
     align-items: center;
     flex-direction: column;
     height: 100%;
+    position: relative;
 }
 
 .game_start_main{
@@ -70,6 +71,7 @@
 
 .game_main{
     height: 100%;
+    width: 100%;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -88,10 +90,14 @@
     font-weight: bold;
 }
 
-.back_button{
+.game_upbar_side{
     width: 15%;
     font-size: 20px;
     color: grey;
+}
+
+.back_button:hover{
+    cursor: pointer;
 }
 
 .game_option_text{
@@ -244,3 +250,26 @@
     animation-delay: 0.4s;
 }
 
+.left-visible{
+    animation: left-visible 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.left-invisible{
+    animation: left-invisible 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.right-visible{
+    animation: right-visible 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.right-invisible{
+    animation: right-invisible 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.yetvisible{
+    visibility: hidden;
+}

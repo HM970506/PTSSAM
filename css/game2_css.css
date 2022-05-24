@@ -1,0 +1,183 @@
+#game2{
+    margin-top: 30%;
+    position: absolute;
+    left: 0;
+    top:0;
+    bottom:0;
+    right:0;
+}
+.game2_ani_background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game2_texts{
+    font-size: 80px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+}
+
+.game2_ani_object{
+    margin:0;
+    padding:0;
+}
+
+.game2_ani_background{
+    display: flex;
+    margin-top: 30%;
+    justify-content: center;
+}
+.object_background{
+    width: 400px;
+    height: 400px;
+    position: relative;
+
+}
+
+#game2_text_before:hover, #game2_text_after:hover{
+    cursor: pointer;
+}
+
+#body_0{
+    border-radius: 100px;
+    border: none;
+    background-color: rgb(100, 86, 255);
+    transition: all ease-out 0.1s;
+    width: 300px;
+    height: 300px;
+    z-index: 10;
+    animation: body 0.9s infinite ease-in-out;
+    position: absolute;
+    left: 12%;
+    bottom: 30%;
+}
+
+
+
+#body_1{
+    border-radius: 40px;
+    border: none;
+    background-color: rgb(244, 41, 255);
+    transition: all 0.1s ease-out ;
+    width:300px;
+    height: 400px;
+    z-index: 10;
+    animation: body 0.7s infinite ease-in-out;
+    position: absolute;
+    left: 12%;
+
+    bottom: 30%;
+}
+
+#body_2{
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(255, 86, 100);
+    transition: all ease-out 0.1s 0s;
+    width: 300px;
+    height: 500px;
+    z-index: 10;
+    animation: body 0.5s infinite ease-in-out;
+    position: absolute;
+    left: 12%;
+
+    bottom: 30%;
+}
+
+
+#leg1_0{
+    border-radius: 30%;
+    border: none;
+    background-color: rgb(100, 86, 255);
+    transition: all ease-out 0.1s 0s;
+    width: 100px;
+    height: 200px;
+    z-index: 20;
+    transform-origin: 50px -50px;
+    animation: leg1 0.9s infinite ease-in-out;
+    position: absolute;
+    bottom:10%;
+    left:20%;
+}
+
+#leg2_0{
+    border-radius: 30%;
+    border: none;
+    background-color: rgb(69, 58, 185);
+    transition: all ease-out 0.1s 0s;
+    width: 100px;
+    height: 200px;
+    transform-origin: 50px 50px;
+    animation: leg2 0.9s infinite ease-in-out;
+    position: absolute;
+    transform: translate(100px, -60px);
+    bottom:10%;
+    right:20%;
+}
+
+
+#leg1_1{
+    border-radius: 30%;
+    border: none;
+    background-color: rgb(244, 41, 255);
+    transition: all ease-out 0.1s 0s;
+    width: 100px;
+    height: 200px;
+    z-index: 20;
+    transform-origin: 50px -50px;
+    animation: leg1 0.7s infinite ease-in-out;
+    position: absolute;
+    bottom:10%;
+    left:20%;
+}
+
+#leg2_1{
+    border-radius: 30%;
+    border: none;
+    background-color: rgb(149, 32, 155);
+    transition: all ease-out 0.1s 0s;
+    width: 100px;
+    height: 200px;
+    transform-origin: 50px 50px;
+    animation: leg2 0.7s infinite ease-in-out;
+    position: absolute;
+    transform: translate(100px, -60px);
+    bottom:10%;
+    right:20%;
+}
+
+
+
+
+#leg1_2{
+    border-radius: 30%;
+    border: none;
+    background-color: rgb(255, 86, 100);
+    transition: all ease-out 0.1s 0s;
+    width: 100px;
+    height: 200px;
+    z-index: 20;
+    transform-origin: 50px -50px;
+    animation: leg1 0.5s infinite ease-in-out;
+    position: absolute;
+    bottom:10%;
+    left:20%;
+}
+
+#leg2_2{
+    border-radius: 30%;
+    border: none;
+    background-color:rgb(173, 47, 57);
+    transition: all ease-out 0.1s 0s;
+    width: 100px;
+    height: 200px;
+    transform-origin: 50px 50px;
+    animation: leg2 0.5s infinite ease-in-out;
+    position: absolute;
+    transform: translate(100px, -60px);
+    bottom:10%;
+    right:20%;
+}
+

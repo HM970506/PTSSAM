@@ -32,15 +32,3 @@
     justify-content: right;
 }
 
-.next_button{
-    background-color: gray;
-    width: 180px;
-    height: 70px;
-    font-size: 30px;
-    color: white;
-    border-radius: 40px;
-    border: none;
-    box-shadow: 0px 5px 10px grey;
-    z-index: 1;
-    margin-right: 5%;
-}
