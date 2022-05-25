@@ -72,14 +72,14 @@
     background-color: var(--color0);
     z-index: 1;
 
-    animation: trans-up 1.5s 2.3s cubic-bezier(0.5, 0, 0.1, 1);
+    animation: index-trans-up  1.5s 2.3s cubic-bezier(0.5, 0, 0.1, 1);
     animation-fill-mode: forwards;
     transform: translateY(20%);
 }
 
 #logo1_box{
     z-index: 2;
-    animation: trans-up 0.5s 1.7s ease-out;
+    animation: index-trans-up  0.5s 1.7s ease-out;
     transform: translateY(80%);
     animation-fill-mode: forwards;
     background-color: var(--color0);

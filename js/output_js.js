@@ -4,7 +4,7 @@ const Image_root="./css/images/PT강사/";
 const Menu_id=["menu_intro", "menu_review", "menu_tel"];
 const Menu_text=["강사 소개", "리뷰", "연락처"];
 
-const Movie_root="./images/강사 설명/";
+const Movie_root="./css/images/강사 설명/";
 
 
 class Trainer{
@@ -36,17 +36,25 @@ const Datas=[new Data("김빛남", 4.2, 10, "대전 유성구 궁동", "김빛�
                 "생활 스포츠 지도사 2급(보디빌딩) <br>스포츠 마사지 1급 <br>스포츠 테이핑 1급  <br>CPR-응급처치 License <br>체형관리사 2급 <br>생활체육지도사 2급 <br>운동처방 2급 트레이너",
                 "2007 - 2010 <br>XX 피트니스 PT 트레이너 <br><br>2010 - 2019<br> OO 피트니스 PT트레이너<br> OO 피트니스 PT팀장<br><br> 2019 - 현재 <br>TT 피트니스 PT 트레이너")
                 )];
+let Mytags=new Set;
 
-                
+Init();                
 Subboxs_make();
+
+
+function Init(){
+    for(let y=1; y<=5; y++){
+        Mytags.add(localStorage.getItem(y));
+    }
+}
 
 function newDiv(){
     return document.createElement("div");
 }
 
 function Subbox_select(target){
-    if(target.classList.contains("select_subbox")) target.className="unselect_subbox";
-    else target.classList.add("select_subbox");
+
+    console.log("모달 띄움");
 }
 
 function Subboxs_make(){
@@ -65,12 +73,14 @@ function Subbox_make(data){
     subbox_in.className="output_subbox_in";
     let subbox_up=Subbox_up(data);
     let subbox_main=Subbox_main(data);
-    let trainer_in=Trainer_in(data);
-
     subbox_in.appendChild(subbox_up);
     subbox_in.appendChild(subbox_main);
-    subbox_in.appendChild(trainer_in);
     return subbox_in;
+}
+
+function Modal(data){
+    let trainer_in=Trainer_in(data);
+
 }
 
 function Subbox_up(data){
@@ -113,20 +123,26 @@ function Subbox_main_text(data){
     text.id="output_subbox_main_text";
     text.className="output_subbox_main_text";
     let text_up=newDiv();
-    text_up.className="output_subbox_main_text nameandstar";
+    text_up.classList.add("output_subbox_main_text");
+    text_up.classList.add("nameandstar");
     let text_name=newDiv();
-    text_name.className="output_subbox_main_text nameandstar_name";
+    text_name.classList.add("output_subbox_main_text");
+    text_name.classList.add("nameandstar_name");
     text_name.innerText=data.name;
 
     let text_star=newDiv();
-    text_star.className="output_subbox_main_text nameandstar_star";
+    text_star.classList.add("output_subbox_main_text");
+    text_star.classList.add("nameandstar_star");
     let text_star_logo=newDiv();
-    text_star_logo.className="output_subbox_main_text nameandstar_star_logo";
+    text_star_logo.classList.add("output_subbox_main_text");
+    text_star_logo.classList.add("nameandstar_star_logo");
     let text_star_score=newDiv();
-    text_star_score.className="output_subbox_main_text nameandstar_star_score";
+    text_star_score.classList.add("output_subbox_main_text");
+    text_star_score.classList.add("nameandstar_star_score");
     text_star_score.innerText=data.score;
     let text_star_count=newDiv();
-    text_star_count.className="output_subbox_main_text nameandstar_star_count";
+    text_star_count.classList.add("output_subbox_main_text");
+    text_star_count.classList.add("nameandstar_star_count");
     text_star_count.innerText="("+data.count+")";
 
     text_star.appendChild(text_star_logo);
@@ -136,7 +152,8 @@ function Subbox_main_text(data){
     text_up.appendChild(text_star);
 
     let subtext=newDiv();
-    subtext.className="output_subbox_main_text subtext";
+    subtext.classList.add("output_subbox_main_text");
+    subtext.classList.add("subtext");
     subtext.innerText=data.subtext;
 
     let tags=newDiv();
@@ -169,13 +186,13 @@ function Trainer_in(data){
 
 function Trainer_in_menu(){
     let menus=newDiv();
-    menus.class="trainer_in_menus";
+    menus.className="trainer_in_menus";
 
     for(let y=0; y<Menu_id.length; y++){
         let menu=Menu();
         menu.id=Menu_id[y];
         menu.innerText=Menu_text[y];
-        menus.append(menu);
+        menus.appendChild(menu);
     }
 
     return menus;

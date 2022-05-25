@@ -30,12 +30,13 @@ class Game3{
 }
 class Game4{
     constructor(){
-
+        this.switch=document.getElementById("switch");
+        localStorage.setItem(4,"female");
     }
 }
 class Game5{
     constructor(){
-
+        localStorage.setItem(5, ["임시"]);
     }
 }
 
@@ -77,6 +78,10 @@ function Game1_rotate(target, Game_1){ //default는 오전 클릭
 }
 
 const Level=["초심자", "중급자", "숙련자"];
+const Stage=document.getElementsByClassName("game_stage")[0];
+const Question=document.getElementsByClassName("game_question")[0];
+const Questions=["","나에게 맞는 운동 시간대는?","나의 운동 숙련도는?", "나의 운동 목적은?", "선호하는 강사 성별은?", "가장 중요시하는 3가지는?"]
+
 const href_end="./game_end.html";
 const href_start="./game_start.html";
 
@@ -126,6 +131,8 @@ function Stage_move(target, Nextbutton, Beforebutton){
             Visible(now_stage+1, "left");
             Nextbutton.button.id="next_stage"+(now_stage+1);
             Beforebutton.button.id="before_stage"+(now_stage+1);
+            Stage.innerText=String(now_stage+1)+"/5";
+            Question.innerText=Questions[now_stage+1];
         }
         else location.href=href_end;
     }
@@ -135,6 +142,8 @@ function Stage_move(target, Nextbutton, Beforebutton){
             Visible(now_stage-1, "right");
             Nextbutton.button.id="next_stage"+(now_stage-1);
             Beforebutton.button.id="before_stage"+(now_stage-1);
+            Stage.innerText=String(now_stage-1)+"/5";
+            Question.innerText=Questions[now_stage-1];
         }
         else location.href=href_start;
     }
@@ -164,6 +173,10 @@ function Game3_select(index, Game_3){
     }
 }
 
+function Game4_switch(Game_4){
+
+}
+
 const Nextbutton=new Next;
 const Beforebutton=new Before;
 Nextbutton.button.addEventListener("click", function(e){Stage_move(e.target, Nextbutton, Beforebutton);});
@@ -180,3 +193,6 @@ const Game_3=new Game3;
 for(let y=0; y<Game_3.options.length; y++){
     Game_3.options[y].addEventListener("click", function(e){Game3_select(y, Game_3);});
 }
+
+const Game_4=new Game4;
+Game_4.addEventListener()

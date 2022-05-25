@@ -89,23 +89,6 @@
     
 }
 
-.select_subbox{
-    height:80%;
-    transition: height 0.3s ease-out;
-}
-
-.unselect_subbox{
-    width: 90%;
-    height: 20%;
-    background-color: #ffba9f;
-    border-radius: 20px;
-    border:none;
-    display: inline-block;
-    text-align: center;
-    overflow:hidden;
-    transition: height 0.3s ease-out;
-}
-
 .output_subbox:hover{
     cursor: pointer;
 }
@@ -118,7 +101,7 @@
 
 .output_subbox_up{
     width: 100%;
-    height: 20%;
+    height: 50px;
     display: flex;
     justify-content:space-between;
     margin: 0px;
@@ -127,16 +110,17 @@
 
 .output_subbox_main{
     width: 100%;
-    height: 100%;
+    height: 150px;
     display: flex;
     margin:0;
     padding:0;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 
 .output_subbox_main_image{
-    width: 30%;
+    width: 180px;
+    height: 150px;
     margin-right: 10px;
 }
 

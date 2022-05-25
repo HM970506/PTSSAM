@@ -35,6 +35,16 @@
     }
   }
 
+  @keyframes index-trans-up {
+    from {
+
+    }
+    to {
+      transform: translateY(5%);
+    }
+  }
+
+
   @keyframes trans-down{
       from{
          opacity: 0%;
