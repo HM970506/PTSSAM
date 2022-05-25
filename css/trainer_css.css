@@ -155,10 +155,6 @@
     height: 70%;
     width: 95%;
     border: 3px black solid;
-    background-image: url("./images/강사 설명/소개 영상.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .trainer_others{

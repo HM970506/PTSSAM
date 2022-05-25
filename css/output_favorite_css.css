@@ -30,10 +30,25 @@
     font-size: 50px;
     font-weight: bold;
     display: flex;
+    transform: translateY(700%);
+    animation: start-title 0.7s 1s ease-out;
+    animation-fill-mode: forwards;
 }
 
 .output_up_name{
     color: blue;
+}
+
+.output_subboxs{
+    opacity: 0%;
+    transform: translateY(-5%);
+    animation: trans-up 0.3s 2s ease-out;
+    animation-fill-mode: forwards;
+    overflow-y: scroll;
+}
+
+.output_subboxs::-webkit-scrollbar{
+    display: none;
 }
 
 .output_subboxs,.favofite_subboxs{
@@ -42,7 +57,6 @@
     height: 80%;
     text-align: center;
 }
-
 
 .output_subboxs_setting{
     width: 100%;
@@ -60,17 +74,40 @@
 }
 
 
-
-
 .output_subbox{
+    opacity: 0%;
     width: 90%;
-    height: 250px;
+    height: 20%;
     background-color: #ffba9f;
     border-radius: 20px;
     border:none;
     display: inline-block;
     text-align: center;
+    overflow:hidden;
+    animation: trans-down 0.5s 3s ease-out;
+    animation-fill-mode: forwards;
+    
+}
 
+.select_subbox{
+    height:80%;
+    transition: height 0.3s ease-out;
+}
+
+.unselect_subbox{
+    width: 90%;
+    height: 20%;
+    background-color: #ffba9f;
+    border-radius: 20px;
+    border:none;
+    display: inline-block;
+    text-align: center;
+    overflow:hidden;
+    transition: height 0.3s ease-out;
+}
+
+.output_subbox:hover{
+    cursor: pointer;
 }
 
 .output_subbox_in{
@@ -92,15 +129,14 @@
     width: 100%;
     height: 100%;
     display: flex;
+    margin:0;
+    padding:0;
+    margin-bottom: 50px;
 }
 
 
 .output_subbox_main_image{
     width: 30%;
-    background-image: url("./images/PT강사/김빛남.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     margin-right: 10px;
 }
 
@@ -159,6 +195,7 @@
 }
 
 .output_down{
+    opacity: 0%;
     width: 90%;
     height: 10%;
     background-color: #faeee7;
@@ -167,6 +204,8 @@
     align-items: center;
     color: gray;
     font-size: 30px;
+    animation: trans-up 0.3s 2.3s ease-out;
+    animation-fill-mode: forwards;
 }
 
 .output_down_logo{
