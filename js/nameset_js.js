@@ -1,11 +1,11 @@
 const Nextbutton=document.getElementsByClassName("nameset_button")[0];
-let middle=document.getElementsByClassName("nameset_middle")[0];
-let nickname;
+
+const href_game="./game.html";
 
 Nextbutton.addEventListener("click", Start);
 
 function Start(){
-    nickname=document.getElementById("name").value;
-    middle.className="output_start_middleclose";
-    location.href="./output.html";
+    let nickname=document.getElementById("name").value;
+    localStorage.setItem("이름", nickname);
+    location.href=href_game;
 }

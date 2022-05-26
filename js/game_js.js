@@ -31,12 +31,15 @@ class Game3{
 class Game4{
     constructor(){
         this.switch=document.getElementById("switch");
+        this.text=document.getElementsByClassName("game4_text")[0];
         localStorage.setItem(4,"female");
     }
 }
 class Game5{
     constructor(){
-        localStorage.setItem(5, ["임시"]);
+        this.selects=new Set;
+        this.options=document.getElementsByClassName("game5_option");
+        localStorage.setItem(5, "");
     }
 }
 
@@ -174,7 +177,28 @@ function Game3_select(index, Game_3){
 }
 
 function Game4_switch(Game_4){
+    if(Game_4.switch.checked){
+        Game_4.text.innerText="남성";
+        Game_4.text.id="male";
+        localStorage.setItem(4, "male");
+    }
+    else{
+        Game_4.text.innerText="여성";
+        Game_4.text.id="female";
+        localStorage.setItem(4, "female");
+    }
+}
 
+function Game5_select(target, Game_5){
+    if(target.classList.contains("select_options")){
+        target.classList.remove("select_options");
+        Game_5.selects.delete(target.id);
+    }
+    else{
+        target.classList.add("select_options");
+        Game_5.selects.add(target.id);
+    }
+    localStorage.setItem(5, Array.from(Game_5.selects));
 }
 
 const Nextbutton=new Next;
@@ -195,4 +219,9 @@ for(let y=0; y<Game_3.options.length; y++){
 }
 
 const Game_4=new Game4;
-Game_4.addEventListener()
+Game_4.switch.addEventListener("click", function(e){Game4_switch(Game_4);});
+
+const Game_5=new Game5;
+for(let y=0; y<Game_5.options.length; y++){
+    Game_5.options[y].addEventListener("click", function(e){Game5_select(e.target, Game_5);});
+}

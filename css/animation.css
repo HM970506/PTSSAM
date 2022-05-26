@@ -225,3 +225,61 @@
       transform: translateY(0);
   }
 }
+
+@keyframes float1 {
+  0%, 100% {
+    transform: translateY(-25%);
+    transform: translateX(9%);
+  }
+  50% {
+    transform: translateY(-14%);
+  }
+}
+@keyframes float2 {
+  0%, 100% {
+    transform: translateY(5%);
+  }
+  50% {
+    transform: translateY(-12%);
+  }
+}
+@keyframes float3 {
+  0%, 100% {
+    transform: translateY(10%);
+  }
+  50% {
+    transform: translateY(-8%);
+  }
+}
+@keyframes float4 {
+  0%, 100% {
+    transform: translateY(10%);
+  }
+  50% {
+    transform: translateY(-12%);
+  }
+}
+@keyframes float5 {
+  0%, 100% {
+    transform: translateY(10%);
+  }
+  50% {
+    transform: translateY(-13%);
+  }
+}
+@keyframes float6 {
+  0%, 100% {
+    transform: translateY(5%);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+}
+@keyframes float7 {
+  0%, 100% {
+    transform: translateY(15%);
+  }
+  50% {
+    transform: translateY(-8%);
+  }
+}

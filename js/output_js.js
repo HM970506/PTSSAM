@@ -38,9 +38,16 @@ const Datas=[new Data("김빛남", 4.2, 10, "대전 유성구 궁동", "김빛�
                 )];
 let Mytags=new Set;
 
-Init();                
+const href_output="./output.html";
+Loading();
+          
 Subboxs_make();
 
+function Loading(){
+    //여기서 정렬 진행
+    Init();      
+    location.href=href_output;
+}
 
 function Init(){
     for(let y=1; y<=5; y++){

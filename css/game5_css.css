@@ -11,3 +11,70 @@
     justify-content: space-around;
     align-items: center;
 }
+
+.game5_option{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    font-weight: bold;
+    color: var(--color3);
+    transition: color 0.1s ease-in;
+    position: absolute;
+}
+
+.game5_option:hover{
+    cursor: pointer;
+}
+
+.game5_option:active{
+    font-size: 65px;
+}
+
+.select_options{
+    color:var(--color2);
+    transition: color 0.1s ease-out;
+}
+
+#kindness{
+    top: 30px;
+    left: 50px;
+    animation: float1 4.7s linear infinite;
+}
+
+#punctuality{
+    top:350px;
+    left: 100px;
+    animation: float2 5.2s linear infinite;
+}
+
+#feedback{
+    bottom:10px;
+    left:10px;
+    animation: float3 5s linear infinite;
+}
+
+#management{
+    right:30px;
+    top:100px;
+    animation: float4 4.7s linear infinite;
+}
+
+#strength{
+    right:10px;
+    top:500px;
+    animation: float5 3.6s linear infinite;
+}
+
+#responsibility{
+    right:100px;
+    bottom:40px;
+    animation: float6 5s linear infinite;
+
+}
+
+#communication{
+    left:300px;
+    bottom:250px;
+    animation: float7 4s linear infinite;
+}

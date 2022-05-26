@@ -1,5 +1,6 @@
 const main=document.getElementsByClassName("out")[0];
 const href_area="./area.html";
+const href_nameset="./name_set.html";
 const href_game="./game.html";
 
 document.getElementById("start_button").addEventListener("click", function(e){GameStart(e.target, "index");});
@@ -25,6 +26,6 @@ async function GameStart(target){
     target.appendChild(new_page);
     
     await wait(0.5);
-    location.href=href_area;
+    location.href=href_nameset;
 
 }

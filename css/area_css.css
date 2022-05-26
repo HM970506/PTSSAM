@@ -27,8 +27,40 @@
 }
 
 .searching_down{
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: right;
 }
 
+#area_add{
+    width: 70px;
+    height: 70px;
+    font-size: 60px;
+    border-radius: 100%;
+    border:none;
+    
+}
+
+#area_add:active{
+    transform: scale(0.9);
+}
+
+.area{
+    background-color: var(--color3);
+    border-radius: 20px;
+    color: var(--color0);
+    font-size: 20px;
+    padding:10px;
+    margin: 10px;
+}
+
+.xbutton{
+    padding-left: 5px;
+}
+
+.searching_list{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
