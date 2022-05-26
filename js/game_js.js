@@ -85,7 +85,7 @@ const Stage=document.getElementsByClassName("game_stage")[0];
 const Question=document.getElementsByClassName("game_question")[0];
 const Questions=["","나에게 맞는 운동 시간대는?","나의 운동 숙련도는?", "나의 운동 목적은?", "선호하는 강사 성별은?", "가장 중요시하는 3가지는?"]
 
-const href_end="./game_end.html";
+const href_area="./area.html";
 const href_start="./game_start.html";
 
 function Game2_next(target, Game_2){
@@ -137,7 +137,7 @@ function Stage_move(target, Nextbutton, Beforebutton){
             Stage.innerText=String(now_stage+1)+"/5";
             Question.innerText=Questions[now_stage+1];
         }
-        else location.href=href_end;
+        else location.href=href_area;
     }
     else{
         if(now_stage!=1){

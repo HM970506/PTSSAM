@@ -2,7 +2,7 @@ const Input= document.getElementById("search");
 const Nextbutton=document.getElementsByClassName("next_button")[0];
 const Areabutton=document.getElementById("area_add");
 const Tags=document.getElementsByClassName("searching_list")[0];
-const href_next="./game_start.html";
+const href_output="./output.html";
 let firsttext=document.getElementById("firsttext");
 let area_set=new Set;
 
@@ -23,7 +23,7 @@ function fillInAddress() {
 
 function Next(){
     localStorage.setItem("area", Array.from(area_set));
-    location.href=href_next;
+    location.href=href_output;
 }
 
 function Area_add(){

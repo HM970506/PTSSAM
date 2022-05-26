@@ -3,17 +3,19 @@ const Subboxs=document.getElementsByClassName("output_subboxs")[0];
 const Image_root="./css/images/PT강사/";
 const Menu_id=["menu_intro", "menu_review", "menu_tel"];
 const Menu_text=["강사 소개", "리뷰", "연락처"];
-
+const Main=document.getElementById("output_main");
 const Movie_root="./css/images/강사 설명/";
 
 
 class Trainer{
-    constructor(birth, belong, movie, qualification, career){
+    constructor(birth, belong, movie, qualification, career, gender, short_career){
         this.birth=birth;
         this.belong=belong;
         this.movie=movie;
         this.qualification=qualification;
         this.career=career;
+        this.gender=gender;
+        this.short_career=short_career;
     }
 }
 
@@ -34,19 +36,17 @@ const Datas=[new Data("김빛남", 4.2, 10, "대전 유성구 궁동", "김빛�
                 ["오후","초급자","근력강화","남성","책임감"],
                 new Trainer("1981.06.21 경력15년", "00 피트니스 센터", "소개 영상.png",
                 "생활 스포츠 지도사 2급(보디빌딩) <br>스포츠 마사지 1급 <br>스포츠 테이핑 1급  <br>CPR-응급처치 License <br>체형관리사 2급 <br>생활체육지도사 2급 <br>운동처방 2급 트레이너",
-                "2007 - 2010 <br>XX 피트니스 PT 트레이너 <br><br>2010 - 2019<br> OO 피트니스 PT트레이너<br> OO 피트니스 PT팀장<br><br> 2019 - 현재 <br>TT 피트니스 PT 트레이너")
-                )];
+                "2007 - 2010 <br>XX 피트니스 PT 트레이너 <br><br>2010 - 2019<br> OO 피트니스 PT트레이너<br> OO 피트니스 PT팀장<br><br> 2019 - 현재 <br>TT 피트니스 PT 트레이너", "남성","경력 5년"))];
 let Mytags=new Set;
 
 const href_output="./output.html";
 Loading();
-          
+Init();      
 Subboxs_make();
 
 function Loading(){
     //여기서 정렬 진행
-    Init();      
-    location.href=href_output;
+
 }
 
 function Init(){
@@ -59,9 +59,9 @@ function newDiv(){
     return document.createElement("div");
 }
 
-function Subbox_select(target){
-
-    console.log("모달 띄움");
+function Subbox_select(data){
+    let modal=Modal(data);
+    Main.appendChild(modal);
 }
 
 function Subboxs_make(){
@@ -70,7 +70,7 @@ function Subboxs_make(){
         let subbox=newDiv();
         subbox.className="output_subbox";
         subbox.appendChild(Subbox_make(Datas[0]));
-        subbox.addEventListener("click", function(e){Subbox_select(e.target);});
+        subbox.addEventListener("click", function(e){Subbox_select(Datas[0]);});
         Subboxs.appendChild(subbox);
     }
 }
@@ -86,8 +86,28 @@ function Subbox_make(data){
 }
 
 function Modal(data){
-    let trainer_in=Trainer_in(data);
+    let trainer_main_out=newDiv();
+    trainer_main_out.className="main";
+    trainer_main_out.id=("main_trainer_out");
+    let trainer_main_in=newDiv();
+    trainer_main_in.className="main";
+    trainer_main_in.id="main_trainer_in"
 
+    let trainer_up=Trainer_up(data);
+    let trainer_profile=Trainer_profile(data);
+    let trainer_in=Trainer_in(data);
+    let trainer_backbutton=newDiv();
+    trainer_backbutton.className="trainer_backbutton";
+    trainer_backbutton.innerText="X";
+    trainer_backbutton.addEventListener("click", function(e){e.target.parentNode.parentNode.remove();});
+
+    trainer_main_in.appendChild(trainer_up);
+    trainer_main_in.appendChild(trainer_profile);
+    trainer_main_in.appendChild(trainer_in);
+    trainer_main_in.appendChild(trainer_backbutton);
+    trainer_main_out.appendChild(trainer_main_in);
+
+    return trainer_main_out;
 }
 
 function Subbox_up(data){
@@ -181,6 +201,7 @@ function Subbox_main_text(data){
 
 function Trainer_in(data){
     let main=newDiv();
+    main.className="trainer_in";
     let menus=Trainer_in_menu();
     let detail=Trainer_in_detail(data);
 
@@ -328,4 +349,82 @@ function Trainer_in_detail(data){
     main.appendChild(others);
 
     return main;
+}
+
+function Trainer_profile(data){
+    let profile=newDiv();
+    profile.className="trainer_profile";
+
+    let img=document.createElement("img");
+    img.className="trainer_profile_image";
+    img.setAttribute("src", Image_root+data.image);
+
+    profile.appendChild(img);
+
+    let text=newDiv();
+    text.className="trainer_profile_text";
+    let text_up=newDiv();
+    text_up.className="trainer_profile_text";
+    text_up.classList.add("profile_text_up");
+    let text_up_name=newDiv();
+    text_up_name.className="trainer_profile_text";
+    text_up_name.classList.add("up_name");
+    text_up_name.innerText=data.name;
+    let button=document.createElement("button");
+    button.className="trainer_profile_text";
+    button.classList.add("up_button");
+    button.innerText="PT 문의";
+
+    text_up.appendChild(text_up_name);
+    text_up.appendChild(button);
+    text.appendChild(text_up);
+
+    let birth=newDiv();
+    birth.className="trainer_profile_text";
+    birth.classList.add("birth");
+    birth.innerText=data.trainer.birth;
+    let gender=newDiv();
+    gender.className="trainer_profile_text";
+    gender.classList.add("gender");
+    gender.innerText=data.trainer.gender;
+    let career=newDiv();
+    career.className="trainer_profile_text";
+    career.classList.add("career");
+    career.innerText=data.trainer.short_career;
+
+    text.appendChild(birth);
+    text.appendChild(gender);
+    text.appendChild(career);
+
+    let tags=newDiv();
+    tags.className="trainer_profile_text";
+    tags.classList.add("tags");
+
+    for(let y=0; y<data.tags; y++){
+        let tag=newDiv();
+        tag.className="trainer_profile_text_tag";
+        tag.classList.add("tag");
+        tag.innerText=data.tags[y];
+        tags.appendChild(tag);
+    }
+    text.appendChild(tags);
+
+    profile.appendChild(text);
+
+    return profile;
+}
+
+function Trainer_up(data){
+    let up=newDiv();
+    up.className="trainer_up";
+    let up_logo=newDiv();
+    up_logo.className="trainer_up_logo";
+    let up_address=newDiv();
+    up_address.className="trainer_up_address";
+    up_address.innerText=data.address;
+
+    up.appendChild(up_logo);
+    up.appendChild(up_address);
+
+    return up;
 }
