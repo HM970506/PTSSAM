@@ -1,10 +1,18 @@
 const Title=document.getElementsByClassName("output_title")[0];
 const Subboxs=document.getElementsByClassName("output_subboxs")[0];
+const Setarea=document.getElementsByClassName("output_down_areasetting")[0];
+const href_area="./area.html";
+const href_setting="./keyword_setting.html";
+const Setkeyword=document.getElementsByClassName("output_down_keywordsetting")[0];
 const Image_root="./css/images/PT강사/";
 const Menu_id=["menu_intro", "menu_review", "menu_tel"];
 const Menu_text=["강사 소개", "리뷰", "연락처"];
 const Main=document.getElementById("output_main");
 const Movie_root="./css/images/강사 설명/";
+const Nickname=document.getElementsByClassName("output_up_name")[0];
+
+Setarea.addEventListener("click", function(e){location.href=href_area});
+Setkeyword.addEventListener("click", function(e){location.href=href_setting});
 
 
 class Trainer{
@@ -37,7 +45,8 @@ const Datas=[new Data("김빛남", 4.2, 10, "대전 유성구 궁동", "김빛�
                 new Trainer("1981.06.21 경력15년", "00 피트니스 센터", "소개 영상.png",
                 "생활 스포츠 지도사 2급(보디빌딩) <br>스포츠 마사지 1급 <br>스포츠 테이핑 1급  <br>CPR-응급처치 License <br>체형관리사 2급 <br>생활체육지도사 2급 <br>운동처방 2급 트레이너",
                 "2007 - 2010 <br>XX 피트니스 PT 트레이너 <br><br>2010 - 2019<br> OO 피트니스 PT트레이너<br> OO 피트니스 PT팀장<br><br> 2019 - 현재 <br>TT 피트니스 PT 트레이너", "남성","경력 5년"))];
-let Mytags=new Set;
+let Mytags=[];
+let Sorting_Data=[];
 
 const href_output="./output.html";
 Loading();
@@ -45,14 +54,29 @@ Init();
 Subboxs_make();
 
 function Loading(){
-    //여기서 정렬 진행
+    //여기서 fetch로 데이터 불러오기 async로 진행
+
+    //json->data 전환
+
+    //
+
+    //mytags와 태그 교집합 count
+    //(count, data)꼴 array만들고 count로 sorting
+    //출력
+
+    //즐겨찾기 기능에 데이터를 연동해야 한다면-> data에서 json으로 전환하고 즐겨찾기 부분 true로 처리해서 fetch..해야하는데 이부분 비동기 처리는?모달로?
+    //당장은 프론트로만 구현해도 되나?
 
 }
 
 function Init(){
-    for(let y=1; y<=5; y++){
-        Mytags.add(localStorage.getItem(y));
+    for(let y=1; y<5; y++){
+        Mytags.push(localStorage.getItem(y));
     }
+
+    Mytags=Mytags.concat(localStorage.getItem(5).split(","));
+    
+    Nickname.innerText=localStorage.getItem("이름");
 }
 
 function newDiv(){
@@ -189,7 +213,8 @@ function Subbox_main_text(data){
     for(let y=0; y<data.tags.length; y++){
         let tag=newDiv();
         tag.className="tag";
-        //해당되는 태그인지 아닌지 여부에 따라 class다르게 해야 함.차후 수정
+        if(new Set(Mytags).has(data.tags[y])) tag.classList.add("select_tag");
+
         tag.innerText=data.tags[y];
         tags.appendChild(tag);
     }
@@ -203,12 +228,29 @@ function Trainer_in(data){
     let main=newDiv();
     main.className="trainer_in";
     let menus=Trainer_in_menu();
-    let detail=Trainer_in_detail(data);
+    let menu_intro=Trainer_in_menu_intro(data);
 
     main.appendChild(menus);
-    main.appendChild(detail);
+    main.appendChild(menu_intro);
 
     return main;
+}
+
+function Menu_chage(target){
+    if(!target.classList.contains("menu_select")){
+        for(let y=0; y<Menu_id.length; y++){
+            let now=document.getElementById(Menu_id[y]);
+            let change_area=document.getElementsByClassName("trainer_in_menu_intro")[0];
+            if(now.id==target.id){
+                now.classList.add("menu_select");
+                
+            }
+            else{
+                if(now.classList.constains("menu_select")) now.classList.remove("menu_select");
+                
+            }
+        }
+    }
 }
 
 
@@ -220,6 +262,7 @@ function Trainer_in_menu(){
         let menu=Menu();
         menu.id=Menu_id[y];
         menu.innerText=Menu_text[y];
+        menu.addEventListener("click", function(e){Menu_change(e.target)});
         menus.appendChild(menu);
     }
 
@@ -232,7 +275,7 @@ function Menu(){
     return menu;
 }
 
-function Trainer_in_detail_intro(data){
+function Trainer_in_menu_intro_intro(data){
     let intro=newDiv();
     intro.className="trainer_intro";
     let intro_title=newDiv();
@@ -250,7 +293,7 @@ function Trainer_in_detail_intro(data){
     return intro;
 }
 
-function Trainer_in_detail_belong(data){
+function Trainer_in_menu_intro_belong(data){
 
 
     let belong=newDiv();
@@ -272,7 +315,7 @@ function Trainer_in_detail_belong(data){
 }
 
 
-function Trainer_in_detail_movie(data){
+function Trainer_in_menu_intro_movie(data){
         
     let movie=newDiv();
     movie.className="trainer_movie";
@@ -289,7 +332,7 @@ function Trainer_in_detail_movie(data){
     return movie;
 }
 
-function Trainer_in_detail_qualification(data){
+function Trainer_in_menu_intro_qualification(data){
     let qualification=newDiv();
     qualification.className="trainer_others_qualification";
     let qualification_title=newDiv();
@@ -307,7 +350,7 @@ function Trainer_in_detail_qualification(data){
     return qualification;
 }
 
-function Trainer_in_detail_career(data){
+function Trainer_in_menu_intro_career(data){
     
     let career=newDiv();
     career.className="trainer_others_career";
@@ -326,18 +369,18 @@ function Trainer_in_detail_career(data){
     return career;
 }
 
-function Trainer_in_detail(data){
+function Trainer_in_menu_intro(data){
     let main=newDiv();
-    main.className="trainer_in_detail";
+    main.className="trainer_in_menu_intro";
 
-    let intro=Trainer_in_detail_intro(data);
-    let belong=Trainer_in_detail_belong(data);
-    let movie=Trainer_in_detail_movie(data);
+    let intro=Trainer_in_menu_intro_intro(data);
+    let belong=Trainer_in_menu_intro_belong(data);
+    let movie=Trainer_in_menu_intro_movie(data);
 
     let others=newDiv();
     others.className="trainer_others";
-    let qualification=Trainer_in_detail_qualification(data);
-    let career=Trainer_in_detail_career(data);
+    let qualification=Trainer_in_menu_intro_qualification(data);
+    let career=Trainer_in_menu_intro_career(data);
 
     others.appendChild(qualification);
     others.appendChild(career);

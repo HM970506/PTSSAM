@@ -57,3 +57,7 @@
     color: grey;
     padding-bottom: 40px;
 }
+
+.keyword:hover{
+    cursor: pointer;
+}

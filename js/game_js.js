@@ -6,6 +6,8 @@ class Game1{
     this.night=document.getElementById("game1_text2");
     this.background=document.getElementsByClassName("game1_ani_background")[0];
     this.object=document.getElementsByClassName("game1_ani_object")[0];
+
+    localStorage.setItem(1, "오전")
     }
 }
 
@@ -18,21 +20,21 @@ class Game2{
         this.object_leg1=document.getElementsByClassName("game2_ani_object")[2];
         this.object_leg2=document.getElementsByClassName("game2_ani_object")[3];
 
-        localStorage.setItem(2, "level_0");
+        localStorage.setItem(2, "초급자");
     }
 }
 
 class Game3{
     constructor(){
         this.options=document.getElementsByClassName("game3_option");
-        localStorage.setItem(3, 1);
+        localStorage.setItem(3, "다이어트");
     }
 }
 class Game4{
     constructor(){
         this.switch=document.getElementById("switch");
         this.text=document.getElementsByClassName("game4_text")[0];
-        localStorage.setItem(4,"female");
+        localStorage.setItem(4,"여성");
     }
 }
 class Game5{
@@ -76,11 +78,16 @@ function Game1_rotate(target, Game_1){ //default는 오전 클릭
         Game_1.object.classList.add(clicking_object);
     }
 
-    localStorage.setItem(1, clicking_object.split("-")[1]);
+    if(clicking_object.split("-")[1]=="night") localStorage.setItem(1, "오후");
+    else localStorage.setItem(1, "오전");
 
 }
 
-const Level=["초심자", "중급자", "숙련자"];
+const Level=["초급자", "중급자", "숙련자"];
+const Purpose=["다이어트", "건강관리", "근력강화"]
+const Important=new Map([[ "kindness","친절함"], ["punctuality","시간엄수"],["communication","소통"],
+                        ["management","식단관리"], ["strength","고강도"], ["responsibility","책임감"],
+                        [ "feedback","의견반영"]]);
 const Stage=document.getElementsByClassName("game_stage")[0];
 const Question=document.getElementsByClassName("game_question")[0];
 const Questions=["","나에게 맞는 운동 시간대는?","나의 운동 숙련도는?", "나의 운동 목적은?", "선호하는 강사 성별은?", "가장 중요시하는 3가지는?"]
@@ -108,7 +115,7 @@ function Game2_next(target, Game_2){
     Game_2.object_leg1.id="leg1_"+next;
     Game_2.object_leg2.id="leg2_"+next;
 
-    localStorage.setItem(2, "level_"+next);
+    localStorage.setItem(2, Level[next]);
 }
 
 
@@ -170,7 +177,7 @@ function Game3_select(index, Game_3){
         if(y!=index && Game_3.options[y].classList.contains("select_option")){
             Game_3.options[y].classList.remove("select_option");
             Game_3.options[index].classList.add("select_option");
-            localStorage.setItem(3, index);
+            localStorage.setItem(3, Purpose[index]);
             break;
         }
     }
@@ -180,12 +187,12 @@ function Game4_switch(Game_4){
     if(Game_4.switch.checked){
         Game_4.text.innerText="남성";
         Game_4.text.id="male";
-        localStorage.setItem(4, "male");
+        localStorage.setItem(4, "남성");
     }
     else{
         Game_4.text.innerText="여성";
         Game_4.text.id="female";
-        localStorage.setItem(4, "female");
+        localStorage.setItem(4, "여성");
     }
 }
 
@@ -198,7 +205,14 @@ function Game5_select(target, Game_5){
         target.classList.add("select_options");
         Game_5.selects.add(target.id);
     }
-    localStorage.setItem(5, Array.from(Game_5.selects));
+
+    let save=[];
+    let select_array=Array.from(Game_5.selects);
+
+    for(let y=0; y<select_array.length; y++){
+        save.push(Important.get(select_array[y]));
+    }
+    localStorage.setItem(5, save);
 }
 
 const Nextbutton=new Next;
