@@ -5,7 +5,7 @@ const href_area="./area.html";
 const href_setting="./keyword_setting.html";
 const Setkeyword=document.getElementsByClassName("output_down_keywordsetting")[0];
 const Image_root="./css/images/PT강사/";
-const Menu_id=["menu_intro", "menu_review", "menu_tel"];
+const Menu_id=["menu_text", "menu_review", "menu_tel"];
 const Menu_text=["강사 소개", "리뷰", "연락처"];
 const Main=document.getElementById("output_main");
 const Movie_root="./css/images/강사 설명/";
@@ -64,9 +64,7 @@ function Loading(){
     //(count, data)꼴 array만들고 count로 sorting
     //출력
 
-    //즐겨찾기 기능에 데이터를 연동해야 한다면-> data에서 json으로 전환하고 즐겨찾기 부분 true로 처리해서 fetch..해야하는데 이부분 비동기 처리는?모달로?
-    //당장은 프론트로만 구현해도 되나?
-
+    //
 }
 
 function Init(){
@@ -227,11 +225,9 @@ function Subbox_main_text(data){
 function Trainer_in(data){
     let main=newDiv();
     main.className="trainer_in";
-    let menus=Trainer_in_menu();
-    let menu_intro=Trainer_in_menu_intro(data);
+    let menu_text=Trainer_in_menu_text(data);
 
-    main.appendChild(menus);
-    main.appendChild(menu_intro);
+    main.appendChild(menu_text);
 
     return main;
 }
@@ -240,7 +236,7 @@ function Menu_chage(target){
     if(!target.classList.contains("menu_select")){
         for(let y=0; y<Menu_id.length; y++){
             let now=document.getElementById(Menu_id[y]);
-            let change_area=document.getElementsByClassName("trainer_in_menu_intro")[0];
+            let change_area=document.getElementsByClassName("trainer_in_menu_text")[0];
             if(now.id==target.id){
                 now.classList.add("menu_select");
                 
@@ -275,7 +271,7 @@ function Menu(){
     return menu;
 }
 
-function Trainer_in_menu_intro_intro(data){
+function Trainer_in_menu_text_intro(data){
     let intro=newDiv();
     intro.className="trainer_intro";
     let intro_title=newDiv();
@@ -293,7 +289,7 @@ function Trainer_in_menu_intro_intro(data){
     return intro;
 }
 
-function Trainer_in_menu_intro_belong(data){
+function Trainer_in_menu_text_belong(data){
 
 
     let belong=newDiv();
@@ -315,7 +311,7 @@ function Trainer_in_menu_intro_belong(data){
 }
 
 
-function Trainer_in_menu_intro_movie(data){
+function Trainer_in_menu_text_movie(data){
         
     let movie=newDiv();
     movie.className="trainer_movie";
@@ -332,7 +328,7 @@ function Trainer_in_menu_intro_movie(data){
     return movie;
 }
 
-function Trainer_in_menu_intro_qualification(data){
+function Trainer_in_menu_text_qualification(data){
     let qualification=newDiv();
     qualification.className="trainer_others_qualification";
     let qualification_title=newDiv();
@@ -350,7 +346,7 @@ function Trainer_in_menu_intro_qualification(data){
     return qualification;
 }
 
-function Trainer_in_menu_intro_career(data){
+function Trainer_in_menu_text_career(data){
     
     let career=newDiv();
     career.className="trainer_others_career";
@@ -369,18 +365,18 @@ function Trainer_in_menu_intro_career(data){
     return career;
 }
 
-function Trainer_in_menu_intro(data){
+function Trainer_in_menu_text(data){
     let main=newDiv();
-    main.className="trainer_in_menu_intro";
+    main.className="trainer_in_menu_text";
 
-    let intro=Trainer_in_menu_intro_intro(data);
-    let belong=Trainer_in_menu_intro_belong(data);
-    let movie=Trainer_in_menu_intro_movie(data);
+    let intro=Trainer_in_menu_text_intro(data);
+    let belong=Trainer_in_menu_text_belong(data);
+    let movie=Trainer_in_menu_text_movie(data);
 
     let others=newDiv();
     others.className="trainer_others";
-    let qualification=Trainer_in_menu_intro_qualification(data);
-    let career=Trainer_in_menu_intro_career(data);
+    let qualification=Trainer_in_menu_text_qualification(data);
+    let career=Trainer_in_menu_text_career(data);
 
     others.appendChild(qualification);
     others.appendChild(career);
@@ -440,10 +436,9 @@ function Trainer_profile(data){
     text.appendChild(career);
 
     let tags=newDiv();
-    tags.className="trainer_profile_text";
-    tags.classList.add("tags");
+    tags.className="tags";
 
-    for(let y=0; y<data.tags; y++){
+    for(let y=0; y<data.tags.length; y++){
         let tag=newDiv();
         tag.className="trainer_profile_text_tag";
         tag.classList.add("tag");

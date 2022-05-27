@@ -1,10 +1,20 @@
-
-#main_trainer_in{
+#main_trainer_out{
+    position:absolute;
+    height: 1600px;
+    width: 900px;
+    padding:0;
+    margin:0;
+    z-index: 10;
     background-color: #ffba9f;
     border-radius: 10px;
     border: none;
+}
+#main_trainer_in{
+    background-color: var(--color0);
+    border-radius: 10px;
+    border: none;
     height: 90%;
-    width: 85%;
+    width:90%;
     display:block;
     margin-top: 30px;
     padding:10px 20px 10px 20px;
@@ -44,17 +54,20 @@
 
 .trainer_profile_image{
     width: 30%;
+    height:fit-content;
+    border-radius: 10px;
     background-image: url("./images/PT강사/김빛남.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-right: 10px;
+    margin-right: 30px;
 }
 
 .trainer_profile_text{
     margin: 0px;
     padding: 0px;
     text-align: left;
+    width: 80%;
 }
 
 .trainer_profile_text_tag{
@@ -62,13 +75,14 @@
     color:black;
     width: 60px;
     height: 2px;
-    font-size: 10px;
     font-weight: bold;
+    margin:10px;
 }
 
 .profile_text_up{
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .up_button{

@@ -166,6 +166,7 @@
 
 .tag{
     width: 100px;
+    overflow: auto;
     height: 10px;
     display: flex;
     justify-content: center;
