@@ -1,6 +1,17 @@
 #favorite_out{
     display: block;
 }
+.trainer_backbutton{
+    background-color: var(--color1);
+
+    border-radius: 30px;
+    font-size:50px;
+    font-weight: bold;
+}
+
+.trainer_backbutton:hover{
+    cursor: pointer;
+}
 #favorite_main{
     background-color: #faeee7;
     height: 93%;
@@ -88,6 +99,13 @@
     
 }
 
+span{
+    margin:5px;
+}
+.review_upbar{
+    display: flex;
+    justify-content: space-between;
+}
 .output_subbox:hover{
     cursor: pointer;
 }
@@ -100,7 +118,7 @@
 
 .output_subbox_up{
     width: 100%;
-    height: 50px;
+    height: 25%;
     display: flex;
     justify-content:space-between;
     margin: 0px;
@@ -165,8 +183,7 @@
 }
 
 .tag{
-    width: 100px;
-    overflow: auto;
+    width: auto;
     height: 10px;
     display: flex;
     justify-content: center;
@@ -175,6 +192,9 @@
     border-radius: 40px;
     color:var(--color4);
     margin: 5px;
+    padding:10px;
+    padding-left: 10px;
+    padding-right: 10px;
     border: none;
 }
 
@@ -210,6 +230,170 @@
     cursor: pointer;
 }
 
-.trainer_in_menu_review{
-    
+.favorite{
+    color:yellow;
 }
+
+.output_subbox_up_logo{
+    font-size: 20px;
+}
+
+
+.trainer_in{
+    width: 100%;
+    height: 75%;
+}
+
+
+.trainer_up{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+}
+
+.trainer_profile{
+    width: 100%;
+    height: 15%;
+    display: flex;
+}
+
+.trainer_profile_image{
+    width: 30%;
+    height:fit-content;
+    border-radius: 10px;
+    background-image: url("./images/PT강사/김빛남.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 30px;
+}
+
+.trainer_profile_text{
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    width: 80%;
+}
+
+.trainer_profile_text_tag{
+    background-color: rgb(170, 170, 170);
+    color:black;
+    width: 60px;
+    height: 2px;
+    font-weight: bold;
+    margin:10px;
+}
+
+.profile_text_up{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.up_button{
+    background-color: #ff5c00;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border:none;
+    padding:5px;
+    box-shadow: 0px 5px 5px grey;
+    width: 90px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trainer_in_menus{
+    display: flex;
+    justify-content: left;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.trainer_in_menu{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border:none;
+    font-size: 25px;
+    font-weight: bold;
+    width: 30%;
+}
+
+#menu_intro{
+    background-color: var(--color2);
+}
+
+#menu_review{
+    background-color: #ff7e33;
+    color: rgb(58, 58, 58)
+}
+
+#menu_tel{
+    background-color: #ffbd67;
+    color: rgb(58, 58, 58)
+}
+
+.trainer_in_detail{
+ background-color: #ff6b16;
+ padding: 0px;
+ padding-left: 10px;
+ margin: 0px;
+ text-align: left;
+ border-top-right-radius: 10px;
+ border-bottom-left-radius: 10px;
+ border-bottom-right-radius: 10px;
+ border:none;
+ height: 100%;
+}
+
+.trainer_title{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.trainer_belong{
+    display: flex;
+    align-items: center;
+}
+
+#trainer_belong_subtext{
+    margin-left: 10px;
+}
+
+.trainer_movie{
+    height: 40%;
+}
+
+.trainer_movie_movie{
+    height: 70%;
+    width: 95%;
+    border: 3px black solid;
+}
+
+.trainer_others{
+    display: flex;
+    justify-content: space-between;
+}
+
+.trainer_others_qualification {
+    width: 60%;
+}
+
+.trainer_others_career{
+    width: 40%;
+}
+
+.menu_main{
+    position: absolute;
+    overflow-y: scroll;
+    display: block;
+    width: 900px;
+}
+
+.menu_main::-webkit-scrollbar{
+    display: none;
+}
+

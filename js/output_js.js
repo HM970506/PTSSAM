@@ -5,8 +5,6 @@ const href_area="./area.html";
 const href_setting="./keyword_setting.html";
 const Setkeyword=document.getElementsByClassName("output_down_keywordsetting")[0];
 const Image_root="./css/images/PT강사/";
-const Menu_id=["menu_text", "menu_review", "menu_tel"];
-const Menu_text=["강사 소개", "리뷰", "연락처"];
 const Main=document.getElementById("output_main");
 const Movie_root="./css/images/강사 설명/";
 const Nickname=document.getElementsByClassName("output_up_name")[0];
@@ -27,8 +25,24 @@ class Trainer{
     }
 }
 
+class Review{
+    constructor(reviewer, score, date,text){
+        this.reviewer=reviewer;
+        this.score=score;
+        this.date=date;
+        this.text=text;
+    }
+}
+
+class Information{
+    constructor(tel, cost){
+        this.tel=tel;
+        this.cost=cost;
+    }
+}
+
 class Data{
-    constructor(name, score, count, address, image, subtext, tags, trainer){ 
+    constructor(name, score, count, address, image, subtext, tags, favorite, trainer, review, information){ 
         this.name=name;
         this.score=score;
         this.count=count;
@@ -37,34 +51,47 @@ class Data{
         this.subtext=subtext;
         this.tags=tags;
         this.trainer=trainer;
+        this.favorite=favorite;
+        this.review=review;
+        this.information=information;
     }
 }
 
-const Datas=[new Data("김빛남", 4.2, 10, "대전 유성구 궁동", "김빛남.png", "초보 전문! 친절하게 처음부터 알려드립니다. <br>저와 함께 합시다!", 
-                ["오후","초급자","근력강화","남성","책임감"],
-                new Trainer("1981.06.21 경력15년", "00 피트니스 센터", "소개 영상.png",
-                "생활 스포츠 지도사 2급(보디빌딩) <br>스포츠 마사지 1급 <br>스포츠 테이핑 1급  <br>CPR-응급처치 License <br>체형관리사 2급 <br>생활체육지도사 2급 <br>운동처방 2급 트레이너",
-                "2007 - 2010 <br>XX 피트니스 PT 트레이너 <br><br>2010 - 2019<br> OO 피트니스 PT트레이너<br> OO 피트니스 PT팀장<br><br> 2019 - 현재 <br>TT 피트니스 PT 트레이너", "남성","경력 5년"))];
 let Mytags=[];
-let Sorting_Data=[];
+let Datas=[];
+
 
 const href_output="./output.html";
+Init();   
 Loading();
-Init();      
+   
 Subboxs_make();
 
 function Loading(){
-    //여기서 fetch로 데이터 불러오기 async로 진행
+    
+    let Data_map=JSON.parse(JSON.stringify(json_data));
+    let Data_sorting=[];
+    for(let y=0; y<Data_map.length; y++){
+        let now=Data_map[y];
+        let trainer=new Trainer(now.trainer.birth, now.trainer.belong, now.trainer.movie, now.trainer.qualification, now.trainer.career, now.trainer.gender, now.trainer.short_career);
+        let review=new Review(now.review.reviewer, now.review.score, now.review.date, now.review.text);
+        let information=new Information(now.information.tel, now.information.cost);
+        let data=new Data(now.name, now.score, now.count, now.address, now.image, now.subtext, now.tags, now.favorite, trainer, review, information);
+        Data_sorting.push([Cnt(data.tags), data]);
+   
+    }
+   
+    Data_sorting.sort(function(a, b){ if(a[0]>b[0]) return -1;else return 1});
 
-    //json->data 전환
+    for(let y=0; y<Data_sorting.length; y++){
+        Datas.push(Data_sorting[y][1]);
+    }
+}
 
-    //
-
-    //mytags와 태그 교집합 count
-    //(count, data)꼴 array만들고 count로 sorting
-    //출력
-
-    //
+function Cnt(tags){
+    let Mytag_set=new Set(Mytags);
+    let cnt=(tags.filter(x=> Mytag_set.has(x))).length;
+    return cnt;
 }
 
 function Init(){
@@ -73,6 +100,7 @@ function Init(){
     }
 
     Mytags=Mytags.concat(localStorage.getItem(5).split(","));
+    Mytags=Mytags.concat(localStorage.getItem("area").split(","));
     
     Nickname.innerText=localStorage.getItem("이름");
 }
@@ -87,12 +115,11 @@ function Subbox_select(data){
 }
 
 function Subboxs_make(){
-    console.log(Datas[0]);
-    for(let y=0; y<5; y++){
+    for(let y=0; y<Datas.length; y++){
         let subbox=newDiv();
         subbox.className="output_subbox";
-        subbox.appendChild(Subbox_make(Datas[0]));
-        subbox.addEventListener("click", function(e){Subbox_select(Datas[0]);});
+        subbox.appendChild(Subbox_make(Datas[y]));
+        subbox.addEventListener("click", function(e){Subbox_select(Datas[y]);});
         Subboxs.appendChild(subbox);
     }
 }
@@ -138,6 +165,12 @@ function Subbox_up(data){
     subbox_up.className="output_subbox_up";
     let subbox_up_logo=newDiv();
     subbox_up_logo.className="output_subbox_up_logo";
+
+    if(data.favorite){
+        subbox_up_logo.innerText="★";
+        subbox_up_logo.classList.add("favorite");
+    }
+    else subbox_up_logo.innerText="☆";
     let subbox_up_address=newDiv();
     subbox_up_address.className="output_subbox_up_address";
     subbox_up_address.innerText=data.address;
@@ -185,6 +218,8 @@ function Subbox_main_text(data){
     let text_star_logo=newDiv();
     text_star_logo.classList.add("output_subbox_main_text");
     text_star_logo.classList.add("nameandstar_star_logo");
+    text_star_logo.innerText="★";
+    text_star_logo.classList.add("favorite");
     let text_star_score=newDiv();
     text_star_score.classList.add("output_subbox_main_text");
     text_star_score.classList.add("nameandstar_star_score");
@@ -203,7 +238,9 @@ function Subbox_main_text(data){
     let subtext=newDiv();
     subtext.classList.add("output_subbox_main_text");
     subtext.classList.add("subtext");
-    subtext.innerText=data.subtext;
+    subtext.innerHTML=data.subtext;
+
+
 
     let tags=newDiv();
     tags.className="tags";
@@ -218,6 +255,7 @@ function Subbox_main_text(data){
     }
 
     text.appendChild(text_up);
+    text.appendChild(subtext);
     text.appendChild(tags);
     return text;
 }
@@ -230,84 +268,6 @@ function Trainer_in(data){
     main.appendChild(menu_text);
 
     return main;
-}
-
-function Menu_chage(target){
-    if(!target.classList.contains("menu_select")){
-        for(let y=0; y<Menu_id.length; y++){
-            let now=document.getElementById(Menu_id[y]);
-            let change_area=document.getElementsByClassName("trainer_in_menu_text")[0];
-            if(now.id==target.id){
-                now.classList.add("menu_select");
-                
-            }
-            else{
-                if(now.classList.constains("menu_select")) now.classList.remove("menu_select");
-                
-            }
-        }
-    }
-}
-
-
-function Trainer_in_menu(){
-    let menus=newDiv();
-    menus.className="trainer_in_menus";
-
-    for(let y=0; y<Menu_id.length; y++){
-        let menu=Menu();
-        menu.id=Menu_id[y];
-        menu.innerText=Menu_text[y];
-        menu.addEventListener("click", function(e){Menu_change(e.target)});
-        menus.appendChild(menu);
-    }
-
-    return menus;
-}
-
-function Menu(){
-    let menu=newDiv();
-    menu.className="trainer_in_menu";
-    return menu;
-}
-
-function Trainer_in_menu_text_intro(data){
-    let intro=newDiv();
-    intro.className="trainer_intro";
-    let intro_title=newDiv();
-    intro_title.className="trainer_title";
-    intro_title.id="trainer_intro_title";
-    intro_title.innerText="프로필";
-    let intro_subtext=newDiv();
-    intro_subtext.className="trainer_subtext";
-    intro_subtext.id="trainer_intro_subtext";
-    intro_subtext.innerText=data.trainer.birth;
-
-    intro.appendChild(intro_title);
-    intro.appendChild(intro_subtext);
-
-    return intro;
-}
-
-function Trainer_in_menu_text_belong(data){
-
-
-    let belong=newDiv();
-    belong.className="trainer_belong";
-    let belong_title=newDiv();
-    belong_title.className="trainer_title";
-    belong_title.id="trainer_belong_title";
-    belong_title.innerText="소속";
-    let belong_subtext=newDiv();
-    belong_subtext.className="trainer_subtext";
-    belong_subtext.id="trainer_belong_subtext";
-    belong_subtext.innerText=data.trainer.belong;
-
-    belong.appendChild(belong_title);
-    belong.appendChild(belong_subtext);
-
-
-    return belong;
 }
 
 
@@ -338,7 +298,7 @@ function Trainer_in_menu_text_qualification(data){
     let qualification_subtext=newDiv();
     qualification_subtext.className="trainer_subtext";
     qualification_subtext.id="trainer_others_qualification_subtext";
-    qualification_subtext.innerText=data.trainer.qualification;
+    qualification_subtext.innerHTML=data.trainer.qualification;
 
     qualification.appendChild(qualification_title);
     qualification.appendChild(qualification_subtext);
@@ -357,7 +317,7 @@ function Trainer_in_menu_text_career(data){
     let career_subtext=newDiv();
     career_subtext.className="trainer_subtext";
     career_subtext.id="trainer_other_career_subtext";
-    career_subtext.innerText=data.trainer.career;
+    career_subtext.innerHTML=data.trainer.career;
 
     career.appendChild(career_title);
     career.appendChild(career_subtext);
@@ -369,8 +329,7 @@ function Trainer_in_menu_text(data){
     let main=newDiv();
     main.className="trainer_in_menu_text";
 
-    let intro=Trainer_in_menu_text_intro(data);
-    let belong=Trainer_in_menu_text_belong(data);
+    let review=Trainer_in_review(data);
     let movie=Trainer_in_menu_text_movie(data);
 
     let others=newDiv();
@@ -381,13 +340,82 @@ function Trainer_in_menu_text(data){
     others.appendChild(qualification);
     others.appendChild(career);
 
+    let infor=Trainer_in_infor(data);
 
-    main.appendChild(intro);
-    main.appendChild(belong);
+    main.appendChild(review);
+    main.appendChild(infor);
     main.appendChild(movie);
     main.appendChild(others);
 
+
     return main;
+}
+
+function Trainer_in_infor(data){
+    let main=newDiv();
+    main.className="trainer_profile_text";
+
+    let title=newDiv();
+    title.className="trainer_title";
+    title.innerText="정보";
+
+    let tel=newDiv();
+    tel.className="trainer_profile_text";
+    tel.innerText="연락처: "+data.information.tel;
+
+    let cost=newDiv();
+    cost.className="trainer_profile_text";
+    cost.innerText="가격: "+data.information.cost;
+
+    main.appendChild(title);
+    main.appendChild(tel);
+    main.appendChild(cost);
+
+    return main;
+}
+
+function Trainer_in_review(data){
+    let title=newDiv();
+    title.className="trainer_title";
+    title.innerText="리뷰";
+
+    let main=newDiv();
+    main.className="trainer_profile_text";
+
+    let upbar=newDiv();
+    let upbar_left=newDiv();
+    upbar.className="review_upbar";
+    let upbar_right=newDiv();
+    let name=document.createElement("span");
+    name.innerText=data.review.reviewer;
+    let star=document.createElement("span");
+    star.innerText="★";
+    star.className="favorite";
+    let score=document.createElement("span");
+    score.innerText=data.review.score;
+    let date=document.createElement("span");
+    date.innerText=data.review.date;
+
+    upbar_left.appendChild(name);
+    upbar_left.appendChild(star);
+    upbar_left.appendChild(score);
+    upbar_left.appendChild(date);
+    upbar_right.innerText="신고/차단";
+
+    upbar.appendChild(upbar_left);
+    upbar.appendChild(upbar_right);
+
+
+    let text=newDiv();
+    text.className="trainer_profile_text";
+    text.innerText=data.review.text;
+
+    main.append(title);
+    main.append(upbar);
+    main.append(text);
+
+    return main;
+    
 }
 
 function Trainer_profile(data){
@@ -418,6 +446,7 @@ function Trainer_profile(data){
     text_up.appendChild(button);
     text.appendChild(text_up);
 
+    console.log(data);
     let birth=newDiv();
     birth.className="trainer_profile_text";
     birth.classList.add("birth");
@@ -440,8 +469,7 @@ function Trainer_profile(data){
 
     for(let y=0; y<data.tags.length; y++){
         let tag=newDiv();
-        tag.className="trainer_profile_text_tag";
-        tag.classList.add("tag");
+        tag.className="tag";
         tag.innerText=data.tags[y];
         tags.appendChild(tag);
     }

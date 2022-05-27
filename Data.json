@@ -1,0 +1,168 @@
+json_data=[
+   {
+      "name" : "김빛남",
+      "favorite": true,
+      "score": 4.2,
+      "count": 10,
+      "address": "대전 유성구 궁동",
+      "image": "김빛남.png",
+      "subtext": "초보 전문! 친절하게 처음부터 알려드립니다. <br>저와 함께 합시다!",
+      "tags":  ["오후","초급자","근력강화","남성","책임감","대전 유성구 궁동"],
+      "trainer":{
+         "birth": "1981.06.21",
+         "short_career": "경력15년",
+         "belong": "00피트니스 센터",
+         "movie": "소개 영상.png",
+         "qualification":  "생활 스포츠 지도사 2급(보디빌딩) <br>스포츠 마사지 1급 <br>스포츠 테이핑 1급  <br>CPR-응급처치 License <br>체형관리사 2급 <br>생활체육지도사 2급 <br>운동처방 2급 트레이너",
+         "career": "2007 - 2010 <br>XX 피트니스 PT 트레이너 <br><br>2010 - 2019<br> OO 피트니스 PT트레이너<br> OO 피트니스 PT팀장<br><br> 2019 - 현재 <br>TT 피트니스 PT 트레이너",
+         "gender":"남성"},
+         "review": {
+            "reviewer":"이**",
+            "score":5,
+            "date":"2일 전",
+            "text":"트레이너님이 친절하시고 식단 관리도 철저하게 도와주세요!"
+         },
+         "information":{
+            "tel":"042-111-1234",
+            "cost":"50,000원"
+         }
+      },
+      
+{
+"name" : "박힘찬",
+"favorite": false,
+"score": 4.2,
+"count": 11,
+"address": "대전 유성구 궁동",
+"image": "박힘찬.png",
+"subtext": "근력강화 빡세게 도와드립니다! 헬린이분들 두려<br>워하지 마세요! 근육 부셔!!",
+"tags":  ["오후","초급자","근력강화","남성","책임감","대전 유성구 궁동"],
+"trainer":{
+   "birth": "1986.09.20",
+   "short_career": "경력14년",
+   "belong": "XX피트니스 센터",
+   "movie": "소개 영상.png",
+   "qualification":  "대한운동사 협회 (KACEP) 정회원 <br>스포츠 마사지 1급 <br>NSCA-CSCS  <br>NSCA-CPT <br>체형관리사 2급 <br>건강운동관리사 <br>KACEP운동사 <br> 생활체육지도자3급(보디빌딩)",
+   "career": "2008 - 2013 <br>TT 피트니스 PT 트레이너 <br><br>2013 - 2018<br> XX 피트니스 PT트레이너<br> XX 피트니스 PT팀장<br><br> 2018 - 현재 <br>OO 피트니스 PT 트레이너",
+   "gender":"남성"},
+"review": {
+   "reviewer":"김**",
+   "score":4,
+   "date":"6일 전",
+   "text":"최고의 강사님, 추천합니다!"
+},
+"information":{
+   "tel":"042-111-3456",
+   "cost":"45,000원"
+}
+},
+{
+"name" : "노머리",
+"favorite": false,
+"score": 3.9,
+"count": 31,
+"address": "대전 유성구 궁동",
+"image": "노머리.png",
+"subtext": "초심자 환영! 3대 500 보장해드립니다! <br>운동을 잘못한다구요? 걱정하지마세요",
+"tags":  ["오후","초급자","근력강화","남성","소통","대전 유성구 장대동"],
+"trainer":{
+   "birth": "1980.03.07",
+   "short_career": "경력14년",
+   "belong": "OO피트니스 센터",
+   "movie": "소개 영상.png",
+   "qualification":  "대한운동사 협회 (KACEP) 정회원 <br>스포츠 마사지 1급 <br>스포츠 테이핑 1급  <br>수상인명구조요원 (라이프가드 자격) <br>체형관리사 2급 <br>건강운동관리사 <br>NASM코리아 ",
+   "career": "2018 - 현재 <br>OO 피트니스 PT 트레이너 ",
+   "gender":"남성"},
+"review": {
+   "reviewer":"이**",
+   "score":3,
+   "date":"5일 전",
+   "text":"아주 전문적인 분은 아닌 것 같아요"
+},
+"information":{
+   "tel":"042-123-1234",
+   "cost":"50,000원"
+}
+},{
+"name" : "최영수",
+"favorite": false,
+"score": 4.1,
+"count": 8,
+"address": "대전 유성구 궁동",
+"image": "최영수.png",
+"subtext": "저와 함께 끝까지 가 봅시다!! 파이팅 넘치게! <br>아자",
+"tags":  ["오후","중급자","근력강화","남성","친절함","대전 유성구 죽동"],
+"trainer":{
+   "birth": "1977.12.22",
+   "short_career": "경력27년",
+   "belong": "TT피트니스 센터",
+   "movie": "소개 영상.png",
+   "qualification":  "생활 스포츠 지도사 2급(보디빌딩) <br>NASM-CPT <br>NASM-PES  <br>CPR-응급처치 License <br>기구 필라테스 지도자 자격(C.C.R.B)-KEPA <br>SHRC 근막경선해부학",
+   "career": "1995 - 2006 <br>XX 피트니스 PT 트레이너 <br><br>2006 - 2021<br> XX 피트니스 PT트레이너<br><br> 2019 - 현재 <br>TT 피트니스 PT 팀장",
+   "gender":"남성"},
+"review": {
+   "reviewer":"지**",
+   "score":5.0,
+   "date":"2일 전",
+   "text":"오랫동안 pt를 해오신 분이라 그런지 노하우가 대단합니다"
+},
+"information":{
+   "tel":"042-222-1234",
+   "cost":"60,000원"
+}
+} ,{
+"name" : "힘이나",
+"favorite": true,
+"score": 4.3,
+"count": 16,
+"address": "대전 유성구 궁동",
+"image": "힘이나.png",
+"subtext": "재밌고 건강하게 운동합시다 <br>!",
+"tags":  ["오전","중급자","근력강화","남성","식단관리","대전 유성구 궁동"],
+"trainer":{
+   "birth": "1990.06.20",
+   "short_career": "경력10년",
+   "belong": "XX피트니스 센터",
+   "movie": "소개 영상.png",
+   "qualification":  "대한운동사 협회 (KACEP) 정회원 <br>스포츠 마사지 1급 <br>NSCA-CPT <br>체형관리사 2급 <br>건강운동관리사 <br>기구 필라테스 지도자 자격(C.C.R.B)-KEPA <br> 생활체육지도자3급(보디빌딩)",
+   "career": "2012 - 현재 <br>XX 피트니스 PT 트레이너",
+   "gender":"여성"},
+"review": {
+   "reviewer":"김**",
+   "score":4,
+   "date":"6일 전",
+   "text":"중급자들을 위한 최고의 pt강사!"
+},
+"information":{
+   "tel":"042-777-4321",
+   "cost":"65,000원"
+}
+},{
+"name" : "건강한",
+"favorite": false,
+"score": 3.8,
+"count": 21,
+"address": "대전 유성구 궁동",
+"image": "건강한.png",
+"subtext": "운동하면 건강해질 수 있습니다! <br>운동 합시다! ",
+"tags":  ["오전","초급자","건강관리","여성","소통","대전 유성구 장대동"],
+"trainer":{
+   "birth": "1990.10.20",
+   "short_career": "경력7년",
+   "belong": "OO피트니스 센터",
+   "movie": "소개 영상.png",
+   "qualification":  "생활체육지도자3급(보디빌딩) <br>스포츠 마사지 1급 <br>NSCA-CSCS  <br>NSCA-CPT <br>체형관리사 2급 <br>건강운동관리사",
+   "career": "2015 - 2018 <br>TT 피트니스 PT 트레이너 <br><br>2018 - 현재<br> XX 피트니스 PT트레이너",
+   "gender":"여성"},
+"review": {
+   "reviewer":"박**",
+   "score":5,
+   "date":"6일 전",
+   "text":"이분에게 운동받고 초급자를 탈출했습니다!"
+},
+"information":{
+   "tel":"042-000-1256",
+   "cost":"48,000원"
+}
+}
+]

@@ -9,17 +9,6 @@ let area_set=new Set;
 Nextbutton.addEventListener("click", Next);
 Areabutton.addEventListener("click", Area_add);
 
-function fillInAddress() {
-        let place = autoComplete.getPlace();
-       conesole.log(place.geometry.location.lat());
-       conesole.log(place.geometry.location.lng());
-        
-        map.setCenter(place.geometry.location);
-        searchMarker = new google.maps.Marker({
-            map: map,
-            position: place.geometry.location
-        });
-    }
 
 function Next(){
     localStorage.setItem("area", Array.from(area_set));
@@ -27,7 +16,6 @@ function Next(){
 }
 
 function Area_add(){
-    console.log("click");
     let text=Input.value;
     if(text!="" && !area_set.has(text)){
         if(firsttext!=undefined) firsttext.remove();
@@ -54,7 +42,3 @@ function Remove_self(target){
     target.parentNode.remove();
 }
 
-let autoComplete = new google.maps.places.Autocomplete(input, {
-    types: ['geocode']
-    });
- autoComplete.addListener('place_changed', fillInAddress);
